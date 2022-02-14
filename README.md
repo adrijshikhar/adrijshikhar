@@ -7,7 +7,7 @@ I am a 23-year-old final year student enrolled in Chemical Engineering at IIT Ro
 <div style="display:flex" markdown="1">
 <img
 src="https://github-readme-stats.vercel.app/api/top-langs/?username=adrijshikhar&hide=html&langs_count=16&layout=compact&theme=github_dark&bg_color=071327"
-style="margin-right:16px"
+style="margin-right:16px;margin-down:16px"
 />
 
 <img
