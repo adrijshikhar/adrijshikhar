@@ -1,16 +1,13 @@
-### Hi there 👋
+## Hi there 👋
 
-<!--
-**adrijshikhar/adrijshikhar** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I am a 23-year-old final year student enrolled in Chemical Engineering at IIT Roorkee. I developed a passion for development in my freshmen year and since then most of my time goes into reading and writing software.
 
-Here are some ideas to get you started:
+![Adrij Github stats](https://github-readme-stats.vercel.app/api?username=adrijshikhar&count_private=true&show_icons=true&theme=tokyonight)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=adrijshikhar&hide=html&langs_count=16&layout=compact&theme=tokyonight)
+
+![adrijshikhar's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=nemesis009&theme=tokyonight)
+
+<!-- 
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=adrijshikhar&repo=vega-vscode-extension&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats) -->
