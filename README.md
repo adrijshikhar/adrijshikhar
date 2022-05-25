@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-I am a 23-year-old final year student enrolled in Chemical Engineering at IIT Roorkee. I developed a passion for development in my freshmen year and since then most of my time goes into reading and writing software.
+Growing up I have been a nerd, with actual taped glasses. I developed a passion for development in my freshmen year and since then most of my time goes into reading and writing software.
 
 ![Adrij Github stats](https://github-readme-stats.vercel.app/api?username=adrijshikhar&count_private=true&show_icons=true&theme=github_dark)
 
