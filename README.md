@@ -6,7 +6,9 @@ Growing up I have been a nerd, with actual taped glasses. I developed a passion 
 ![Adrij Github stats](https://github-readme-stats.vercel.app/api?username=adrijshikhar&count_private=true&show_icons=true&theme=github_dark)
 
 <p align="center">
-  
+   <img align="left" 
+src="https://github-readme-stats.vercel.app/api?username=adrijshikhar&count_private=true&show_icons=true&theme=github_dark"
+/>
  <img align="right" 
 src="https://github-readme-stats.vercel.app/api/top-langs/?username=adrijshikhar&hide=html&langs_count=16&layout=compact&theme=github_dark"
 />
