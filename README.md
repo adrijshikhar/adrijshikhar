@@ -81,15 +81,6 @@ move 25K objects through a CDC pipeline move tokens through an inference cluster
 </details>
 
 <details open>
-<summary>🟡 Contribution art — Pac-Man</summary>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/pacman-contribution-graph.svg" alt="Pac-Man contribution graph" />
-</div>
-
-</details>
-
-<details>
 <summary>🐍 Contribution art — Snake &amp; 3D</summary>
 
 <div align="center">
