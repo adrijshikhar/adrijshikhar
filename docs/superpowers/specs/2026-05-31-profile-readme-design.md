@@ -128,6 +128,42 @@ block on how to summarize/cite accurately.
   available for manual rerun.
 - Minesweeper invalid input → Action validates, comments the error, makes no state change.
 
+## Security requirements
+
+Security is a first-class part of the implementation plan, not an afterthought. The
+attack surface is small (a profile repo with no app code), so the requirements target the
+GitHub Actions surface and supply chain specifically.
+
+### v1 — `contribution-art.yml`
+- **Least privilege:** declare `permissions: contents: write` at the job level only; no
+  broader scopes. Use the built-in `GITHUB_TOKEN`; no PATs, no repo secrets.
+- **No untrusted triggers:** only `schedule` (cron) and `workflow_dispatch`. Never
+  `pull_request_target` or `issue*` triggers in v1 — those carry attacker-controlled input.
+- **Pin third-party actions to a full commit SHA** (not a tag/branch) to prevent
+  supply-chain tag-moving attacks (CWE-1357). Applies to `Platane/snk`,
+  `abozanona/pacman-contribution-graph`, `yoshi389111/github-profile-3d-contrib`, and the
+  push action.
+- **No interpolation of any external data into `run:` steps.**
+
+### v2 — `minesweeper.yml` (the one genuinely exploitable surface — must be hardened)
+- **Class:** GitHub Actions script injection → command injection (CWE-78). Issue title/body
+  is fully attacker-controlled (anyone can open an issue on a public profile repo).
+- **Never** interpolate `${{ github.event.issue.* }}` / `${{ github.event.comment.* }}`
+  into a shell `run:` step. Pass through `env:` and reference as a quoted `"$VAR"`, or
+  consume via `actions/github-script` with the value bound to a JS variable.
+- **Strict input allowlist:** validate the move against a regex (e.g. `^[A-J](10|[1-9])$`)
+  and reject everything else before any processing or state mutation.
+- **Least privilege + SHA-pinned actions** (same as v1). Avoid `pull_request_target`.
+- **Board-state file** lives on the `output` branch only; never executed, only parsed as
+  data with validation.
+
+### Out-of-scope / mitigated (documented, no action needed)
+- Third-party hosted SVGs embedded as `<img>`: GitHub proxies all external images through
+  its camo service (`camo.githubusercontent.com`), which strips active content and hides
+  the viewer's IP/referer. README markdown is server-side sanitized by GitHub — no
+  stored-XSS path. No repo-side mitigation required.
+- `AGENTS.md` / `llms.txt`: static text, no execution sink.
+
 ## Verification
 
 1. Markdown lint + local render check (VS Code preview / `grip`).
@@ -135,7 +171,14 @@ block on how to summarize/cite accurately.
 3. Trigger `contribution-art.yml` via `workflow_dispatch`; confirm SVGs land on `output`
    branch and render.
 4. Visual check on live `github.com/adrijshikhar`.
-5. v2: open a test issue; confirm the board updates.
+5. **Security gate:** run `actionlint` + `zizmor` on every workflow; confirm SHA-pinned
+   actions, least-privilege `permissions`, and no untrusted-input interpolation. Block
+   merge on any high-severity finding.
+6. v2: open a test issue; confirm the board updates AND confirm an injection-payload title
+   (e.g. `mine: B3"; id; echo "`) is rejected by the allowlist with no command execution.
+7. **Final audit:** after all changes, run the security-bounty-hunter lens over the full
+   diff — enumerate workflow triggers, prove whether any attacker-controlled input reaches
+   a sink, and record the verdict.
 
 ## Risks / notes
 
