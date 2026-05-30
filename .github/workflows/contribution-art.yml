@@ -63,7 +63,7 @@ jobs:
           cp profile-3d-contrib/profile-night-view.svg dist/3d-contrib.svg
 
       - name: Publish to output branch
-        uses: peaceiris/actions-gh-pages@cf520ea9ea08068ea9439a7378a287ad8580e645
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: output
