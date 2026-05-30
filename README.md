@@ -103,7 +103,13 @@ move 25K objects through a CDC pipeline move tokens through an inference cluster
 <details>
 <summary>🎮 Play Minesweeper</summary>
 
-Coming soon — a playable, issue-driven Minesweeper board lives here (v2).
+Click to play — each move opens a pre-filled issue; a bot replies with the updated board.
+
+[**🟢 New game**](https://github.com/adrijshikhar/adrijshikhar/issues/new?title=mine:%20new&body=Opening%20a%20new%20Minesweeper%20game.)
+&nbsp;·&nbsp;
+[**Make a move**](https://github.com/adrijshikhar/adrijshikhar/issues/new?title=mine:%20B3&body=Replace%20B3%20with%20your%20move%20%28A-I%2C%201-9%29.)
+
+Moves use `mine: <col><row>` — columns A–I, rows 1–9. Anything else is rejected.
 
 </details>
 
