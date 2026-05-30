@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@900f2210b1d28bbbd0bd22d17926b9e224e8f231
+        with:
+          persist-credentials: false
 
       - name: Generate snake
         uses: Platane/snk@905444068febdb67551f3a9e1792a469e7432f67
