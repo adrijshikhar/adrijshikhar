@@ -18,6 +18,14 @@ jobs:
         with:
           persist-credentials: false
 
+      # Docker-based generators (snake, pac-man) run as root and would otherwise
+      # create dist/ root-owned, breaking the later cp by the runner user.
+      # Pre-create it world-writable so every step can write regardless of uid.
+      - name: Prepare dist
+        run: |
+          mkdir -p dist
+          chmod 777 dist
+
       - name: Generate snake
         # Pinned to v3.5.0 (the release line that supports the multi-`outputs` input;
         # master HEAD carried an older single-output interface).
@@ -52,7 +60,6 @@ jobs:
         # The 3D action writes into profile-3d-contrib/; the night variant file
         # is named profile-night-view.svg (there is no plain profile-night.svg).
         run: |
-          mkdir -p dist
           cp profile-3d-contrib/profile-night-view.svg dist/3d-contrib.svg
 
       - name: Publish to output branch
