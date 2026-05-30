@@ -6,7 +6,7 @@ commands and updating both this file and the workflows.
 
 | Action | SHA | Resolved release |
 |--------|-----|------------------|
-| Platane/snk | `905444068febdb67551f3a9e1792a469e7432f67` | latest |
+| Platane/snk | `d8f6715049803e982ee5ff501b6b9b7d5deeb09b` | v3.5.0 |
 | abozanona/pacman-contribution-graph | `93ebd01187d837d03fa069d7080a82ff11027953` | latest |
 | yoshi389111/github-profile-3d-contrib | `f234ae01c07dcb685fd5f259ffc24bacb1fe7314` | latest |
 | peaceiris/actions-gh-pages | `cf520ea9ea08068ea9439a7378a287ad8580e645` | latest |

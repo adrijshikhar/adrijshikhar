@@ -19,7 +19,9 @@ jobs:
           persist-credentials: false
 
       - name: Generate snake
-        uses: Platane/snk@905444068febdb67551f3a9e1792a469e7432f67
+        # Pinned to v3.5.0 (the release line that supports the multi-`outputs` input;
+        # master HEAD carried an older single-output interface).
+        uses: Platane/snk@d8f6715049803e982ee5ff501b6b9b7d5deeb09b
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: dist/snake-dark.svg?palette=github-dark
@@ -28,7 +30,12 @@ jobs:
         # NOTE: this action has no `output` input. With games=pacman it writes
         # dist/pacman-contribution-graph.svg (light) and
         # dist/pacman-contribution-graph-dark.svg (dark).
+        # It is memory-heavy (Canvas render) and can OOM the runner — bump the Node heap
+        # and keep it non-fatal so snake/3D/publish still succeed (graceful degradation).
+        continue-on-error: true
         uses: abozanona/pacman-contribution-graph@93ebd01187d837d03fa069d7080a82ff11027953
+        env:
+          NODE_OPTIONS: --max-old-space-size=6144
         with:
           github_user_name: ${{ github.repository_owner }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
