@@ -1,0 +1,68 @@
+name: minesweeper
+
+on:
+  issues:
+    types: [opened]
+
+# Least privilege: write contents (commit board state) + issues (comment back).
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  play:
+    # Only act on issues whose title starts with the game prefix.
+    if: startsWith(github.event.issue.title, 'mine:')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@900f2210b1d28bbbd0bd22d17926b9e224e8f231
+        with:
+          persist-credentials: true
+
+      - name: Play move
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+        env:
+          # Untrusted input crosses the boundary ONLY as an env var, never into run:.
+          RAW_TITLE: ${{ github.event.issue.title }}
+        with:
+          script: |
+            const fs = require("fs");
+            const engine = require("./scripts/minesweeper.js");
+            const raw = process.env.RAW_TITLE.replace(/^mine:\s*/i, "");
+            const stateFile = ".minesweeper-state.json";
+
+            let state;
+            if (raw.toLowerCase() === "new" || !fs.existsSync(stateFile)) {
+              state = engine.newBoard(context.issue.number);
+            } else {
+              state = JSON.parse(fs.readFileSync(stateFile, "utf8"));
+            }
+
+            const move = engine.parseMove(raw);
+            if (raw.toLowerCase() !== "new" && !move) {
+              await github.rest.issues.createComment({
+                ...context.repo, issue_number: context.issue.number,
+                body: "Invalid move. Use `mine: <A-I><1-9>` (e.g. `mine: B3`) or `mine: new`.",
+              });
+              return;
+            }
+            if (move) state = engine.applyMove(state, move);
+
+            fs.writeFileSync(stateFile, JSON.stringify(state));
+            const board = engine.render(state);
+
+            await github.rest.issues.createComment({
+              ...context.repo, issue_number: context.issue.number, body: board,
+            });
+            await github.rest.issues.update({
+              ...context.repo, issue_number: context.issue.number, state: "closed",
+            });
+
+      - name: Commit board state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .minesweeper-state.json
+          git commit -m "chore: minesweeper move" || echo "no change"
+          git push

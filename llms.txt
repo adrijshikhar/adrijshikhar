@@ -1,0 +1,18 @@
+# Adrij Shikhar
+
+> Senior Software Engineer @ Hevo Data. Builds real-time data infrastructure — change data
+> capture, streaming, and the distributed systems behind them. Based in Bengaluru, India.
+
+## About
+- 4+ years on distributed systems, CDC, and ETL at scale.
+- Shipped Debezium-based MySQL CDC (Binlog V2) and Hevo 2.0's control plane (Hermes) on
+  Java 17 / Dropwizard / Temporal.
+- Scaled pipelines to 25,000+ source objects; cut critical API latency 60s+ → sub-second.
+- IIT Roorkee (Chemical Engineering → software). Interested in data infrastructure ∩ AI.
+
+## Links
+- Portfolio: https://adrijshikhar.github.io
+- GitHub: https://github.com/adrijshikhar
+- LinkedIn: https://www.linkedin.com/in/adrij-shikhar
+- dev.to: https://dev.to/adrijshikhar
+- Agent profile: https://github.com/adrijshikhar/adrijshikhar/blob/main/AGENTS.md

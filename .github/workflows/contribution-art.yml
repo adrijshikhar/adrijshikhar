@@ -1,0 +1,58 @@
+name: contribution-art
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # daily at 00:00 UTC
+  workflow_dispatch:
+
+# Least privilege: only what the push needs.
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@900f2210b1d28bbbd0bd22d17926b9e224e8f231
+        with:
+          persist-credentials: false
+
+      - name: Generate snake
+        uses: Platane/snk@905444068febdb67551f3a9e1792a469e7432f67
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: dist/snake-dark.svg?palette=github-dark
+
+      - name: Generate Pac-Man graph
+        # NOTE: this action has no `output` input. With games=pacman it writes
+        # dist/pacman-contribution-graph.svg (light) and
+        # dist/pacman-contribution-graph-dark.svg (dark).
+        uses: abozanona/pacman-contribution-graph@93ebd01187d837d03fa069d7080a82ff11027953
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          games: pacman
+
+      - name: Generate 3D contribution calendar
+        # NOTE: this action takes NO `with:` inputs — username/token are env vars.
+        uses: yoshi389111/github-profile-3d-contrib@f234ae01c07dcb685fd5f259ffc24bacb1fe7314
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Stage 3D output into dist
+        # The 3D action writes into profile-3d-contrib/; the night variant file
+        # is named profile-night-view.svg (there is no plain profile-night.svg).
+        run: |
+          mkdir -p dist
+          cp profile-3d-contrib/profile-night-view.svg dist/3d-contrib.svg
+
+      - name: Publish to output branch
+        uses: peaceiris/actions-gh-pages@cf520ea9ea08068ea9439a7378a287ad8580e645
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: output
+          publish_dir: dist
+          keep_files: true
+          enable_jekyll: true
