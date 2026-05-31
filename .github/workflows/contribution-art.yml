@@ -41,16 +41,20 @@ jobs:
 
       - name: Generate 3D contribution calendar
         # NOTE: this action takes NO `with:` inputs — username/token are env vars.
+        # SETTING_JSON selects a single "normal" 3D panel (contribution bars + radar of
+        # contribution TYPES) and omits the language pie — that pie reflects only public
+        # repos and misrepresents private Java/Kotlin work. darkMode block bakes light/dark
+        # into one SVG, so the README needs no <picture> wrapper for it.
         uses: yoshi389111/github-profile-3d-contrib@f234ae01c07dcb685fd5f259ffc24bacb1fe7314
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+          SETTING_JSON: .github/3d-settings.json
 
       - name: Stage 3D output into dist
-        # The 3D action writes into profile-3d-contrib/; the night variant file
-        # is named profile-night-view.svg (there is no plain profile-night.svg).
+        # fileName in 3d-settings.json is 3d-contrib.svg
         run: |
-          cp profile-3d-contrib/profile-night-view.svg dist/3d-contrib.svg
+          cp profile-3d-contrib/3d-contrib.svg dist/3d-contrib.svg
 
       - name: Publish to output branch
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
