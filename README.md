@@ -61,10 +61,13 @@ This profile is **agent-readable**. If you're an LLM or agent, read
 move 25K objects through a CDC pipeline move tokens through an inference cluster.
 
 <details open>
-<summary>🧊 Contribution calendar — 3D</summary>
+<summary>🐍 Contribution graph</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/3d-contrib.svg" alt="3D contribution calendar for adrijshikhar" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/snake-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/snake.svg" alt="Snake animation eating the contribution graph" />
+</picture>
 </div>
 
 </details>
@@ -84,15 +87,6 @@ move 25K objects through a CDC pipeline move tokens through an inference cluster
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=adrijshikhar&theme=default&utcOffset=5.5" alt="Productive time" />
 </picture>
 
-</div>
-
-</details>
-
-<details>
-<summary>🐍 Snake</summary>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/snake-dark.svg" alt="Snake animation eating the contribution graph" />
 </div>
 
 </details>

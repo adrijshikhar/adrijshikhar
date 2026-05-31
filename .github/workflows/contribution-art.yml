@@ -26,35 +26,22 @@ jobs:
           mkdir -p dist
           chmod 777 dist
 
-      - name: Generate snake
+      - name: Generate snake (light + dark palettes)
         # Pinned to v3.5.0 (the release line that supports the multi-`outputs` input;
-        # master HEAD carried an older single-output interface).
+        # master HEAD carried an older single-output interface). Emit two palettes so the
+        # README can serve a light/dark variant via <picture>.
         uses: Platane/snk@d8f6715049803e982ee5ff501b6b9b7d5deeb09b
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: dist/snake-dark.svg?palette=github-dark
+          outputs: |
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
 
-      # Pac-Man generator (abozanona/pacman-contribution-graph) was removed: it renders
-      # via node-canvas in a Docker container and reliably OOMs the runner (the container
-      # has its own node, so the runner's NODE_OPTIONS heap bump does not apply). Snake +
-      # 3D cover the contribution-art slot. Revisit if a memory-stable pacman action exists.
-
-      - name: Generate 3D contribution calendar
-        # NOTE: this action takes NO `with:` inputs — username/token are env vars.
-        # SETTING_JSON selects a single "normal" 3D panel (contribution bars + radar of
-        # contribution TYPES) and omits the language pie — that pie reflects only public
-        # repos and misrepresents private Java/Kotlin work. darkMode block bakes light/dark
-        # into one SVG, so the README needs no <picture> wrapper for it.
-        uses: yoshi389111/github-profile-3d-contrib@f234ae01c07dcb685fd5f259ffc24bacb1fe7314
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-          SETTING_JSON: .github/3d-settings.json
-
-      - name: Stage 3D output into dist
-        # fileName in 3d-settings.json is 3d-contrib.svg
-        run: |
-          cp profile-3d-contrib/3d-contrib.svg dist/3d-contrib.svg
+      # Pac-Man generator removed: node-canvas Docker action reliably OOMs the runner.
+      # 3D calendar (yoshi389111/github-profile-3d-contrib) removed: every 3D panel bundles
+      # a language pie computed from PUBLIC repos only, which misrepresents private
+      # Java/Kotlin work — there is no 3D-bars-only mode. Snake is contribution-volume only
+      # (no language claim), so it is the accurate contribution-art showpiece.
 
       - name: Publish to output branch
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
