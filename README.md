@@ -53,11 +53,10 @@ behind them. Chemical engineering at IIT Roorkee, software ever since.
 </td>
 <td width="45%" valign="top">
 
-<img src="https://github-readme-stats.vercel.app/api?username=adrijshikhar&show_icons=true&hide_border=true&count_private=true&theme=github_dark" alt="stats" />
-
-<img src="https://streak-stats.demolab.com?user=adrijshikhar&hide_border=true&theme=github-dark" alt="streak" />
-
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=adrijshikhar&theme=github_dark" alt="languages" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=adrijshikhar&show_icons=true&hide_border=true&count_private=true&theme=github_dark" />
+  <img src="https://github-readme-stats.vercel.app/api?username=adrijshikhar&show_icons=true&hide_border=true&count_private=true&theme=default" alt="GitHub stats for adrijshikhar" />
+</picture>
 
 </td>
 </tr>
@@ -70,23 +69,49 @@ This profile is **agent-readable**. If you're an LLM or agent, read
 **[`llms.txt`](./llms.txt)** for a terse machine-parseable summary. Same primitives that
 move 25K objects through a CDC pipeline move tokens through an inference cluster.
 
-<details>
-<summary>📊 More stats</summary>
+<details open>
+<summary>🧊 Contribution calendar — 3D</summary>
 
 <div align="center">
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=adrijshikhar&theme=github_dark" alt="most-commit-language" />
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=adrijshikhar&theme=github_dark&utcOffset=5.5" alt="productive-time" />
+<img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/3d-contrib.svg" alt="3D contribution calendar for adrijshikhar" />
 </div>
 
 </details>
 
-<details open>
-<summary>🐍 Contribution art — Snake &amp; 3D</summary>
+<details>
+<summary>📊 More stats</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/snake-dark.svg" alt="Snake animation" />
-<br>
-<img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/3d-contrib.svg" alt="3D contribution calendar" />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=adrijshikhar&hide_border=true&theme=github-dark" />
+  <img src="https://streak-stats.demolab.com?user=adrijshikhar&hide_border=true&theme=default" alt="Contribution streak" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=adrijshikhar&theme=github_dark" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=adrijshikhar&theme=default" alt="Repos per language" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=adrijshikhar&theme=github_dark" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=adrijshikhar&theme=default" alt="Most-commit language" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=adrijshikhar&theme=github_dark&utcOffset=5.5" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=adrijshikhar&theme=default&utcOffset=5.5" alt="Productive time" />
+</picture>
+
+</div>
+
+</details>
+
+<details>
+<summary>🐍 Snake</summary>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/snake-dark.svg" alt="Snake animation eating the contribution graph" />
 </div>
 
 </details>
@@ -103,9 +128,3 @@ Click to play — each move opens a pre-filled issue; a bot replies with the upd
 Moves use `mine: <col><row>` — columns A–I, rows 1–9. Anything else is rejected.
 
 </details>
-
-<div align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=adrijshikhar&theme=darkhub&no-frame=true&no-bg=true&column=7&margin-w=8" alt="trophies" />
-
-</div>
