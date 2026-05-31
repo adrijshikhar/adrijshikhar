@@ -26,9 +26,14 @@ behind them. Chemical engineering at IIT Roorkee, software ever since.
 
 <div align="center">
 
-<!-- Self-computed in contribution-art.yml via GitHub GraphQL (rolling 365 days), so it
-     matches GitHub's "contributions in the last year" instead of a calendar-year window. -->
-<a href="https://github.com/adrijshikhar"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fcontrib-endpoint.json&style=for-the-badge" alt="Contributions in the last year" /></a>
+<!-- All self-computed in contribution-art.yml via GitHub's API (rolling 365 days for
+     contributions/PRs), so each badge matches GitHub exactly — no calendar-year or
+     public-only third-party skew. -->
+<img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fcontrib-endpoint.json&style=for-the-badge" alt="Contributions in the last year" />
+<img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fprs-endpoint.json&style=for-the-badge" alt="Pull requests in the last year" />
+<img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Ffollowers-endpoint.json&style=for-the-badge" alt="Followers" />
+<img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Frepos-endpoint.json&style=for-the-badge" alt="Public repos" />
+<img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fyears-endpoint.json&style=for-the-badge" alt="Years on GitHub" />
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=adrijshikhar&theme=github-compact&hide_border=true&area=true&custom_title=Contribution%20activity%20(last%20year)" />

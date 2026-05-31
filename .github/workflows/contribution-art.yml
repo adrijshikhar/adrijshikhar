@@ -43,23 +43,41 @@ jobs:
       # Java/Kotlin work — there is no 3D-bars-only mode. Snake is contribution-volume only
       # (no language claim), so it is the accurate contribution-art showpiece.
 
-      - name: Compute rolling-year contributions (Shields endpoint)
-        # Query GitHub's own contribution calendar (rolling 365 days) so the README badge
-        # matches GitHub's "contributions in the last year", not a calendar-year window.
-        # OWNER is the trusted repo owner; passed via env (never interpolated into the shell).
+      - name: Compute profile stats (Shields endpoints)
+        # Query GitHub's own API so every badge matches GitHub exactly (rolling 365 days for
+        # contributions/PRs, not a calendar-year window). OWNER is the trusted repo owner,
+        # passed via env (never interpolated into the shell).
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
         run: |
           # shellcheck disable=SC2016  # $u is a GraphQL variable, must stay single-quoted
-          total=$(gh api graphql \
-            -f query='query($u:String!){user(login:$u){contributionsCollection{contributionCalendar{totalContributions}}}}' \
-            -f u="$OWNER" \
-            --jq '.data.user.contributionsCollection.contributionCalendar.totalContributions')
-          # group thousands with a comma (e.g. 2470 -> 2,470), locale-independent
-          pretty=$(echo "$total" | sed -e ':a' -e 's/\B[0-9]\{3\}\>/,&/;ta')
-          printf '{"schemaVersion":1,"label":"contributions (last year)","message":"%s","color":"2ea043","labelColor":"24292f"}\n' "$pretty" > dist/contrib-endpoint.json
-          cat dist/contrib-endpoint.json
+          resp=$(gh api graphql -f u="$OWNER" -f query='query($u:String!){user(login:$u){
+            createdAt
+            followers{totalCount}
+            repositories(privacy:PUBLIC, ownerAffiliations:OWNER){totalCount}
+            contributionsCollection{
+              contributionCalendar{totalContributions}
+              totalPullRequestContributions
+            }}}')
+
+          jqv(){ echo "$resp" | jq -r "$1"; }
+          group(){ echo "$1" | sed -e ':a' -e 's/\B[0-9]\{3\}\>/,&/;ta'; }
+          emit(){ printf '{"schemaVersion":1,"label":"%s","message":"%s","color":"%s","labelColor":"24292f"}\n' "$2" "$3" "$4" > "dist/$1"; }
+
+          contrib=$(jqv '.data.user.contributionsCollection.contributionCalendar.totalContributions')
+          prs=$(jqv '.data.user.contributionsCollection.totalPullRequestContributions')
+          followers=$(jqv '.data.user.followers.totalCount')
+          repos=$(jqv '.data.user.repositories.totalCount')
+          created=$(jqv '.data.user.createdAt')
+          years=$(( $(date +%Y) - ${created:0:4} ))
+
+          emit contrib-endpoint.json    "contributions (last year)" "$(group "$contrib")" 2ea043
+          emit prs-endpoint.json        "pull requests (last year)" "$(group "$prs")"     8957e5
+          emit followers-endpoint.json  "followers"                 "$(group "$followers")" 1f6feb
+          emit repos-endpoint.json      "public repos"              "$(group "$repos")"   db61a2
+          emit years-endpoint.json      "on GitHub"                 "${years}+ yrs"       fb8500
+          head -n -0 dist/*-endpoint.json 2>/dev/null; cat dist/*-endpoint.json
 
       - name: Publish to output branch
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
