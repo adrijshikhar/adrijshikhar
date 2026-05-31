@@ -41,13 +41,17 @@ behind them. Chemical engineering at IIT Roorkee, software ever since.
 
 </div>
 
-### Stack
-
 <div align="center">
 
+![Claude](https://img.shields.io/badge/Claude-D97757?style=flat&logo=claude&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-1F1F1F?style=flat&logo=modelcontextprotocol&logoColor=white)
+![LLMs / RAG](https://img.shields.io/badge/LLMs%20%2F%20RAG-5A45FF?style=flat&logo=openai&logoColor=white)
+![AI Agents](https://img.shields.io/badge/AI%20Agents-412991?style=flat)
+![Cohere](https://img.shields.io/badge/Cohere-39594D?style=flat&logo=cohere&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
 ![Dropwizard](https://img.shields.io/badge/Dropwizard-3C5280?style=flat)
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=spring&logoColor=white)
