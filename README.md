@@ -126,3 +126,7 @@ Click to play — each move opens a pre-filled issue; a bot replies with the upd
 Moves use `mine: <col><row>` — columns A–I, rows 1–9. Anything else is rejected.
 
 </details>
+
+<div align="center">
+<sub>♻️ Like this profile? <a href="./template/SETUP.md">Reuse the template</a> — placeholders + setup guide.</sub>
+</div>

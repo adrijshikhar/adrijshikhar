@@ -1,0 +1,97 @@
+name: contribution-art
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # daily at 00:00 UTC
+  workflow_dispatch:
+
+# Least privilege: only what the push needs.
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@900f2210b1d28bbbd0bd22d17926b9e224e8f231
+        with:
+          persist-credentials: false
+
+      # Docker-based generators (snake, pac-man) run as root and would otherwise
+      # create dist/ root-owned, breaking the later cp by the runner user.
+      # Pre-create it world-writable so every step can write regardless of uid.
+      - name: Prepare dist
+        run: |
+          mkdir -p dist
+          chmod 777 dist
+
+      - name: Generate snake (light + dark palettes)
+        # Pinned to v3.5.0 (the release line that supports the multi-`outputs` input;
+        # master HEAD carried an older single-output interface). Emit two palettes so the
+        # README can serve a light/dark variant via <picture>.
+        uses: Platane/snk@d8f6715049803e982ee5ff501b6b9b7d5deeb09b
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
+
+      # Pac-Man generator removed: node-canvas Docker action reliably OOMs the runner.
+      # 3D calendar (yoshi389111/github-profile-3d-contrib) removed: every 3D panel bundles
+      # a language pie computed from PUBLIC repos only, which misrepresents private
+      # Java/Kotlin work — there is no 3D-bars-only mode. Snake is contribution-volume only
+      # (no language claim), so it is the accurate contribution-art showpiece.
+
+      - name: Compute profile stats (Shields endpoints)
+        # Query GitHub's own API so every badge matches GitHub exactly (rolling 365 days for
+        # contributions/PRs, not a calendar-year window). OWNER is the trusted repo owner,
+        # passed via env (never interpolated into the shell).
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          # shellcheck disable=SC2016  # $u is a GraphQL variable, must stay single-quoted
+          resp=$(gh api graphql -f u="$OWNER" -f query='query($u:String!){user(login:$u){
+            createdAt
+            followers{totalCount}
+            repositories(privacy:PUBLIC, ownerAffiliations:OWNER){totalCount}
+            contributionsCollection{
+              contributionCalendar{totalContributions}
+              totalPullRequestContributions
+            }}}')
+
+          jqv(){ echo "$resp" | jq -r "$1"; }
+          group(){ echo "$1" | sed -e ':a' -e 's/\B[0-9]\{3\}\>/,&/;ta'; }
+          emit(){ printf '{"schemaVersion":1,"label":"%s","message":"%s","color":"%s","labelColor":"24292f"}\n' "$2" "$3" "$4" > "dist/$1"; }
+
+          contrib=$(jqv '.data.user.contributionsCollection.contributionCalendar.totalContributions')
+          prs=$(jqv '.data.user.contributionsCollection.totalPullRequestContributions')
+          followers=$(jqv '.data.user.followers.totalCount')
+          repos=$(jqv '.data.user.repositories.totalCount')
+          created=$(jqv '.data.user.createdAt')
+          years=$(( $(date +%Y) - ${created:0:4} ))
+
+          emit contrib-endpoint.json    "contributions (last year)" "$(group "$contrib")" 2ea043
+          emit prs-endpoint.json        "pull requests (last year)" "$(group "$prs")"     8957e5
+          emit followers-endpoint.json  "followers"                 "$(group "$followers")" 1f6feb
+          emit repos-endpoint.json      "public repos"              "$(group "$repos")"   db61a2
+          emit years-endpoint.json      "on GitHub"                 "${years}+ yrs"       fb8500
+          head -n -0 dist/*-endpoint.json 2>/dev/null; cat dist/*-endpoint.json
+
+      - name: Generate Pac-Man (npm lib via jsdom — pure SVG, no canvas OOM)
+        env:
+          OWNER: ${{ github.repository_owner }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm install --no-save pacman-contribution-graph jsdom
+          node scripts/gen-pacman.mjs
+
+      - name: Publish to output branch
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: output
+          publish_dir: dist
+          keep_files: true
+          enable_jekyll: true

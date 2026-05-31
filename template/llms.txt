@@ -1,0 +1,12 @@
+# YOUR NAME
+
+> Your Role @ Your Company. One-line summary of what you build. Based in Your City.
+
+## About
+- A few bullets on your background and focus.
+- Concrete, metric-backed accomplishments where possible.
+
+## Links
+- GitHub: https://github.com/YOUR_USERNAME
+- LinkedIn: https://www.linkedin.com/in/YOUR_LINKEDIN
+- Agent profile: https://github.com/YOUR_USERNAME/YOUR_USERNAME/blob/main/AGENTS.md
