@@ -30,7 +30,6 @@ behind them. Chemical engineering at IIT Roorkee, software ever since.
      contributions/PRs), so each badge matches GitHub exactly — no calendar-year or
      public-only third-party skew. -->
 <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fcontrib-endpoint.json&style=for-the-badge" alt="Contributions in the last year" />
-<img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fprs-endpoint.json&style=for-the-badge" alt="Pull requests in the last year" />
 <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Ffollowers-endpoint.json&style=for-the-badge" alt="Followers" />
 <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Frepos-endpoint.json&style=for-the-badge" alt="Public repos" />
 <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fyears-endpoint.json&style=for-the-badge" alt="Years on GitHub" />
