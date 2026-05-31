@@ -14,10 +14,6 @@
 
 ## 👤 For humans
 
-<table>
-<tr>
-<td width="55%" valign="top">
-
 **Senior Software Engineer @ [Hevo Data](https://hevodata.com/)**, Bengaluru.
 I build real-time data infrastructure — CDC, streaming, and the distributed systems
 behind them. Chemical engineering at IIT Roorkee, software ever since.
@@ -28,6 +24,15 @@ behind them. Chemical engineering at IIT Roorkee, software ever since.
 - 🚑 Resolved **200+ P0/P1** incidents · **1,889** PRs across **47** repos
 - 🌱 Exploring **data infrastructure ∩ AI**
 
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=adrijshikhar&theme=github_dark" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=adrijshikhar&theme=default" alt="GitHub profile summary for adrijshikhar" width="80%" />
+</picture>
+
+</div>
+
 **Stack**
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
@@ -35,32 +40,18 @@ behind them. Chemical engineering at IIT Roorkee, software ever since.
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
-<br>
 ![Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat&logo=apachekafka&logoColor=white)
 ![Debezium](https://img.shields.io/badge/Debezium-D9411E?style=flat&logo=redhat&logoColor=white)
 ![Spark](https://img.shields.io/badge/Spark-E25A1C?style=flat&logo=apachespark&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
-<br>
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
 ![Temporal](https://img.shields.io/badge/Temporal-000000?style=flat&logo=temporal&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat&logo=terraform&logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
-
-</td>
-<td width="45%" valign="top">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=adrijshikhar&theme=github_dark" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=adrijshikhar&theme=default" alt="GitHub profile summary for adrijshikhar" />
-</picture>
-
-</td>
-</tr>
-</table>
 
 ## 🤖 For agents
 
@@ -86,16 +77,6 @@ move 25K objects through a CDC pipeline move tokens through an inference cluster
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=adrijshikhar&hide_border=true&theme=github-dark" />
   <img src="https://streak-stats.demolab.com?user=adrijshikhar&hide_border=true&theme=default" alt="Contribution streak" />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=adrijshikhar&theme=github_dark" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=adrijshikhar&theme=default" alt="Repos per language" />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=adrijshikhar&theme=github_dark" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=adrijshikhar&theme=default" alt="Most-commit language" />
 </picture>
 
 <picture>
