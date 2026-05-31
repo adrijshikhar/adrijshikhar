@@ -54,8 +54,8 @@ behind them. Chemical engineering at IIT Roorkee, software ever since.
 <td width="45%" valign="top">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=adrijshikhar&show_icons=true&hide_border=true&count_private=true&theme=github_dark" />
-  <img src="https://github-readme-stats.vercel.app/api?username=adrijshikhar&show_icons=true&hide_border=true&count_private=true&theme=default" alt="GitHub stats for adrijshikhar" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=adrijshikhar&theme=github_dark" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=adrijshikhar&theme=default" alt="GitHub profile summary for adrijshikhar" />
 </picture>
 
 </td>
