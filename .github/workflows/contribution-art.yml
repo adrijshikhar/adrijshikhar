@@ -79,6 +79,14 @@ jobs:
           emit years-endpoint.json      "on GitHub"                 "${years}+ yrs"       fb8500
           head -n -0 dist/*-endpoint.json 2>/dev/null; cat dist/*-endpoint.json
 
+      - name: Generate Pac-Man (npm lib via jsdom — pure SVG, no canvas OOM)
+        env:
+          OWNER: ${{ github.repository_owner }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm install --no-save pacman-contribution-graph jsdom
+          node scripts/gen-pacman.mjs
+
       - name: Publish to output branch
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
         with:

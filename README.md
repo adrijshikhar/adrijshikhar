@@ -43,12 +43,34 @@ behind them. Chemical engineering at IIT Roorkee, software ever since.
 
 ### Stack
 
-**Languages** — Java · Kotlin · Python · TypeScript · Go<br>
-**Backend** — Dropwizard · Spring · gRPC / Protobuf · Quarkus · Temporal<br>
-**Streaming** — Kafka · Debezium · Spark · Pulsar · Avro<br>
-**Data** — Postgres · MySQL · Oracle · SQL Server · MongoDB · Cassandra · Redis · Snowflake · BigQuery · Redshift<br>
-**Infra** — AWS · GCP · Docker · Kubernetes · Terraform · CircleCI<br>
-**Quality** — JUnit5 · Testcontainers · OpenTelemetry · Grafana · Sentry · Flyway
+<div align="center">
+
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
+![Dropwizard](https://img.shields.io/badge/Dropwizard-3C5280?style=flat)
+![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=spring&logoColor=white)
+![gRPC](https://img.shields.io/badge/gRPC%20%2F%20Protobuf-377C9C?style=flat&logo=grpc&logoColor=white)
+![Temporal](https://img.shields.io/badge/Temporal-000000?style=flat&logo=temporal&logoColor=white)
+![Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat&logo=apachekafka&logoColor=white)
+![Debezium](https://img.shields.io/badge/Debezium-D9411E?style=flat&logo=redhat&logoColor=white)
+![Spark](https://img.shields.io/badge/Spark-E25A1C?style=flat&logo=apachespark&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=flat&logo=oracle&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
+![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=flat&logo=snowflake&logoColor=white)
+![BigQuery](https://img.shields.io/badge/BigQuery-669DF6?style=flat&logo=googlebigquery&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat&logo=terraform&logoColor=white)
+![CircleCI](https://img.shields.io/badge/CircleCI-343434?style=flat&logo=circleci&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
+
+</div>
 
 ## 🤖 For agents
 
@@ -57,7 +79,17 @@ This profile is **agent-readable**. If you're an LLM or agent, read
 **[`llms.txt`](./llms.txt)** for a terse machine-parseable summary. Same primitives that
 move 25K objects through a CDC pipeline move tokens through an inference cluster.
 
-## 🐍 Contribution graph
+## 🕹️ Contribution graph
+
+<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/pacman-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/pacman.svg" alt="Pac-Man eating the contribution graph" />
+</picture>
+</div>
+
+<details>
+<summary>🐍 Snake version</summary>
 
 <div align="center">
 <picture>
@@ -65,6 +97,8 @@ move 25K objects through a CDC pipeline move tokens through an inference cluster
   <img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/snake.svg" alt="Snake animation eating the contribution graph" />
 </picture>
 </div>
+
+</details>
 
 <details>
 <summary>📊 More stats</summary>
