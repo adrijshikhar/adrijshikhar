@@ -51,6 +51,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
         run: |
+          # shellcheck disable=SC2016  # $u is a GraphQL variable, must stay single-quoted
           total=$(gh api graphql \
             -f query='query($u:String!){user(login:$u){contributionsCollection{contributionCalendar{totalContributions}}}}' \
             -f u="$OWNER" \

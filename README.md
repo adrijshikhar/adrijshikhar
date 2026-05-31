@@ -59,8 +59,7 @@ This profile is **agent-readable**. If you're an LLM or agent, read
 **[`llms.txt`](./llms.txt)** for a terse machine-parseable summary. Same primitives that
 move 25K objects through a CDC pipeline move tokens through an inference cluster.
 
-<details open>
-<summary>🐍 Contribution graph</summary>
+## 🐍 Contribution graph
 
 <div align="center">
 <picture>
@@ -69,23 +68,12 @@ move 25K objects through a CDC pipeline move tokens through an inference cluster
 </picture>
 </div>
 
-</details>
-
 <details>
 <summary>📊 More stats</summary>
 
 <div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=adrijshikhar&hide_border=true&theme=github-dark" />
-  <img src="https://streak-stats.demolab.com?user=adrijshikhar&hide_border=true&theme=default" alt="Contribution streak" />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=adrijshikhar&theme=github_dark&utcOffset=5.5" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=adrijshikhar&theme=default&utcOffset=5.5" alt="Productive time" />
-</picture>
-
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=adrijshikhar&hide_border=true&theme=github-dark" /><img src="https://streak-stats.demolab.com?user=adrijshikhar&hide_border=true&theme=default" alt="Contribution streak" width="48%" /></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=adrijshikhar&theme=github_dark&utcOffset=5.5" /><img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=adrijshikhar&theme=default&utcOffset=5.5" alt="Productive time" width="48%" /></picture>
 </div>
 
 </details>
