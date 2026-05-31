@@ -30,6 +30,11 @@ behind them. Chemical engineering at IIT Roorkee, software ever since.
      matches GitHub's "contributions in the last year" instead of a calendar-year window. -->
 <a href="https://github.com/adrijshikhar"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fcontrib-endpoint.json&style=for-the-badge" alt="Contributions in the last year" /></a>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=adrijshikhar&theme=github-compact&hide_border=true&area=true&custom_title=Contribution%20activity%20(last%20year)" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=adrijshikhar&theme=github-light&hide_border=true&area=true&custom_title=Contribution%20activity%20(last%20year)" alt="Contribution activity graph over the last year" />
+</picture>
+
 </div>
 
 **Stack**
