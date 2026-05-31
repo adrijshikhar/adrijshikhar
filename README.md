@@ -26,10 +26,9 @@ behind them. Chemical engineering at IIT Roorkee, software ever since.
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=adrijshikhar&theme=github_dark" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=adrijshikhar&theme=default" alt="GitHub profile summary for adrijshikhar" width="80%" />
-</picture>
+<!-- Self-computed in contribution-art.yml via GitHub GraphQL (rolling 365 days), so it
+     matches GitHub's "contributions in the last year" instead of a calendar-year window. -->
+<a href="https://github.com/adrijshikhar"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fcontrib-endpoint.json&style=for-the-badge" alt="Contributions in the last year" /></a>
 
 </div>
 

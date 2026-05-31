@@ -43,6 +43,23 @@ jobs:
       # Java/Kotlin work — there is no 3D-bars-only mode. Snake is contribution-volume only
       # (no language claim), so it is the accurate contribution-art showpiece.
 
+      - name: Compute rolling-year contributions (Shields endpoint)
+        # Query GitHub's own contribution calendar (rolling 365 days) so the README badge
+        # matches GitHub's "contributions in the last year", not a calendar-year window.
+        # OWNER is the trusted repo owner; passed via env (never interpolated into the shell).
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          total=$(gh api graphql \
+            -f query='query($u:String!){user(login:$u){contributionsCollection{contributionCalendar{totalContributions}}}}' \
+            -f u="$OWNER" \
+            --jq '.data.user.contributionsCollection.contributionCalendar.totalContributions')
+          # group thousands with a comma (e.g. 2470 -> 2,470), locale-independent
+          pretty=$(echo "$total" | sed -e ':a' -e 's/\B[0-9]\{3\}\>/,&/;ta')
+          printf '{"schemaVersion":1,"label":"contributions (last year)","message":"%s","color":"2ea043","labelColor":"24292f"}\n' "$pretty" > dist/contrib-endpoint.json
+          cat dist/contrib-endpoint.json
+
       - name: Publish to output branch
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
         with:
