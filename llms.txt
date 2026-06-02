@@ -11,7 +11,7 @@
 - IIT Roorkee (Chemical Engineering → software). Interested in data infrastructure ∩ AI.
 
 ## Links
-- Portfolio: https://adrijshikhar.github.io
+- Portfolio: https://adrijshikhar.dev
 - GitHub: https://github.com/adrijshikhar
 - LinkedIn: https://www.linkedin.com/in/adrij-shikhar
 - dev.to: https://dev.to/adrijshikhar
