@@ -6,7 +6,7 @@
 
 <a href="https://www.linkedin.com/in/adrij-shikhar"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 <a href="https://dev.to/adrijshikhar"><img src="https://img.shields.io/badge/dev.to-0A0A0A?style=flat&logo=devdotto&logoColor=white" alt="dev.to" /></a>
-<a href="https://adrijshikhar.github.io"><img src="https://img.shields.io/badge/Portfolio-222?style=flat&logo=astro&logoColor=white" alt="Portfolio" /></a>
+<a href="https://adrijshikhar.dev"><img src="https://img.shields.io/badge/Portfolio-222?style=flat&logo=astro&logoColor=white" alt="Portfolio" /></a>
 <a href="mailto:adrijshikhar85@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white" alt="Email" /></a>
 <img src="https://komarev.com/ghpvc/?username=adrijshikhar&style=flat&color=58A6FF&label=Profile+views" alt="views" />
 
