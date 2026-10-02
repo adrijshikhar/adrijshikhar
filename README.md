@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://adrijshikhar.dev">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=26&duration=2800&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=distributed+systems;agentic+developer+tools;real-time+data+infrastructure;writing+what+breaks" alt="Adrij Shikhar" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&duration=2600&pause=1000&color=58A6FF&center=true&vCenter=true&width=560&lines=Build+distributed+systems;Scale+data+pipelines;Forge+agentic+workflows;Pipe+live+data+into+AI" alt="Adrij Shikhar" />
 </a>
 
 <p>
