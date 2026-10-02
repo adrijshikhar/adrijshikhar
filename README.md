@@ -1,11 +1,15 @@
 <div align="center">
 
-# Adrij Shikhar
+<a href="https://adrijshikhar.dev">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3500&pause=900&center=true&vCenter=true&width=820&color=58A6FF&lines=I+build+real-time+data+infrastructure;CDC+%C2%B7+streaming+%C2%B7+distributed+systems;Where+data+infra+meets+AI" alt="Adrij Shikhar" />
+</a>
 
-**Senior Software Engineer @ [Hevo Data](https://hevodata.com/)**, Bengaluru  
-[adrijshikhar.dev](https://adrijshikhar.dev) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/adrij-shikhar) &nbsp;·&nbsp; [dev.to](https://dev.to/adrijshikhar) &nbsp;·&nbsp; [Email](mailto:adrijshikhar26@gmail.com)
-
-<br />
+<p>
+  <a href="https://adrijshikhar.dev"><img src="https://img.shields.io/badge/adrijshikhar.dev-222?style=flat&logo=astro&logoColor=white" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/adrij-shikhar"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://dev.to/adrijshikhar"><img src="https://img.shields.io/badge/dev.to-0A0A0A?style=flat&logo=devdotto&logoColor=white" alt="dev.to" /></a>
+  <a href="mailto:adrijshikhar26@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
 
 <!-- Self-computed daily in contribution-art.yml via GitHub API (rolling 365 days) -->
 <a href="https://github.com/adrijshikhar"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fcontrib-endpoint.json&style=flat-square" alt="Contributions in the last year" /></a>
@@ -15,8 +19,8 @@
 </div>
 
 ## 👤 For humans
-
-I build real-time data infrastructure — CDC, streaming, and the distributed systems behind them. Chemical engineering at IIT Roorkee, software ever since.
+ 
+**Senior Software Engineer @ [Hevo Data](https://hevodata.com/)**, Bengaluru. I build real-time data infrastructure — CDC, streaming, and the distributed systems behind them. Chemical engineering at IIT Roorkee, software ever since.
 
 - 🔭 Shipped **Binlog V2** (Debezium MySQL CDC) → 100% of MySQL pipelines
 - 🏗️ Built **Hermes**, Hevo 2.0's control plane (Java 17 · Dropwizard · Temporal)
