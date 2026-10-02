@@ -59,8 +59,8 @@ Same primitives that move 25K objects through a CDC pipeline move tokens through
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/snake-dark.svg" />
-    <img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/snake.svg" alt="Snake animation eating the contribution graph" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/pacman-dark.svg" />
+    <img src="https://raw.githubusercontent.com/adrijshikhar/adrijshikhar/output/pacman.svg" alt="Pac-Man eating the contribution graph" />
   </picture>
 </div>
 
