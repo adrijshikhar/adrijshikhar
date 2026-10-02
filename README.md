@@ -3,17 +3,16 @@
 # Adrij Shikhar
 
 **Senior Software Engineer @ [Hevo Data](https://hevodata.com/)**, Bengaluru  
-[adrijshikhar.dev](https://adrijshikhar.dev) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/adrij-shikhar) &nbsp;·&nbsp; [dev.to](https://dev.to/adrijshikhar) &nbsp;·&nbsp; [Email](mailto:adrijshikhar85@gmail.com)
+[adrijshikhar.dev](https://adrijshikhar.dev) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/adrij-shikhar) &nbsp;·&nbsp; [dev.to](https://dev.to/adrijshikhar) &nbsp;·&nbsp; [Email](mailto:adrijshikhar26@gmail.com)
 
 <br />
 
-<!-- Self-computed daily in contribution-art.yml via GitHub's API (rolling 365 days) -->
-<img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fcontrib-endpoint.json&style=for-the-badge" alt="Contributions in the last year" />
-<img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fyears-endpoint.json&style=for-the-badge" alt="Years on GitHub" />
+<!-- Self-computed daily in contribution-art.yml via GitHub API (rolling 365 days) -->
+<a href="https://github.com/adrijshikhar"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fcontrib-endpoint.json&style=flat-square" alt="Contributions in the last year" /></a>
+<a href="https://github.com/adrijshikhar"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fprs-endpoint.json&style=flat-square" alt="Pull requests in the last year" /></a>
+<a href="https://github.com/adrijshikhar"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fadrijshikhar%2Fadrijshikhar%2Foutput%2Fyears-endpoint.json&style=flat-square" alt="Years on GitHub" /></a>
 
 </div>
-
----
 
 ## 👤 For humans
 

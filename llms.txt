@@ -1,18 +1,328 @@
 # Adrij Shikhar
 
-> Senior Software Engineer @ Hevo Data. Builds real-time data infrastructure — change data
-> capture, streaming, and the distributed systems behind them. Based in Bengaluru, India.
+> Senior Software Engineer @ Hevo Data. Builds real-time data infrastructure — change data capture, streaming, connector platforms, frameworks underneath them, and the agent tooling that generates and operates both. Based in Bengaluru, India.
 
-## About
-- 4+ years on distributed systems, CDC, and ETL at scale.
-- Shipped Debezium-based MySQL CDC (Binlog V2) and Hevo 2.0's control plane (Hermes) on
-  Java 17 / Dropwizard / Temporal.
-- Scaled pipelines to 25,000+ source objects; cut critical API latency 60s+ → sub-second.
-- IIT Roorkee (Chemical Engineering → software). Interested in data infrastructure ∩ AI.
+Graduated from IIT Roorkee in chemistry, then spent my freshman year discovering I would rather build software. I have been doing that since.
 
-## Links
-- Portfolio: https://adrijshikhar.dev
-- GitHub: https://github.com/adrijshikhar
-- LinkedIn: https://www.linkedin.com/in/adrij-shikhar
-- dev.to: https://dev.to/adrijshikhar
-- Agent profile: https://github.com/adrijshikhar/adrijshikhar/blob/main/AGENTS.md
+These days that mostly means connector platforms, the frameworks underneath them, and the agent tooling that generates and operates both. And writing down what breaks.
+
+---
+
+## Experience
+
+### Senior Software Engineer @ Hevo Data (Jun 2022 — Present)
+
+#### Agent-native connector development
+- Built the surface that lets LLMs generate and operate connectors: a construct library, a connector generator, an installable CLI, a skill library, and an MCP server exposing platform APIs to agents.
+- Started the internal agent-tooling platform the team now builds on — repo structure, skill conventions, CI auto-release, marketplace distribution. Other engineers extend it rather than fork it.
+
+#### Streamlining connector development
+- Made connector authentication declarative. A provider used to be its own processor inside the platform — a code change, a database migration, and coordination across three services. It is now a config file, with no platform change at all.
+- Moved runtime configuration and config templates into the connector, behind a compatibility kit that gates correctness at build time instead of in review.
+- Standardised how connector repos are created, versioned and released, behind a central BOM carrying a named release policy. Before this every connector carried its own build config and drifted.
+- Decoupled the connector fleet from the shared platform SDK, so a connector no longer inherits a runtime it does not control.
+
+#### Connection reliability
+- Owned the test-connection contract end to end and took its false-negative rate from **over 30% to nil in validation** — a failing check now means an actual connection problem rather than a flaky one.
+- Delivered configuration validation across every source and destination — Postgres, MySQL, Oracle, SQL Server, Snowflake, BigQuery, Redshift — so a misconfiguration surfaces at connect time rather than at first sync.
+- Brought p95 test-connection latency **under 10 seconds**, and shipped an end-to-end suite alongside each framework rather than leaving the contract unit-tested.
+
+#### Failure visibility
+- Replaced static error classification with a dynamic system. A classification change used to wait on a connector's full release cycle; it now takes **minutes instead of 3–7 days**.
+- Root-caused a class of production hangs to the regex engine rather than the queries being run, and migrated classification to RE2J — which bounds worst-case evaluation to **under five seconds** and took a load run from a multi-minute stall to **1m19s**.
+- Built metrics and dashboards for connection health, and put HTTP client metrics into the connector construct library so teams see a rate-limiting API before it becomes a sync failure.
+
+#### Data correctness at scale
+- Delivered SCD Type 2 history mode across Snowflake, BigQuery and Redshift, handling the per-destination SQL differences — Redshift has no `MERGE` and needs a four-statement path.
+- Built parent-child object handling with inferred deletes, giving full-load objects the delete support they previously lacked.
+- Implemented real-time CDC on the Debezium engine, and built the schema catalog service behind it from scratch — schema versioning, metadata management and compatibility checks, so a pipeline survives schema evolution.
+- Scaled object handling from **1,000 to 25,000 objects**, with a **5x** gain in MySQL ingestion throughput.
+- Moved every source and destination onto negotiated TLS 1.2 and 1.3, and proved it safe across providers with a dedicated SSL test suite.
+
+#### Engineering velocity
+- Cut build and CI runtime with measured before and after: `mvn clean verify` **31:43 → 10:33** and CI **43:32 → 21:24** on the first service, then **11:07 → 5:15** and **5:14 → 2:01** as the approach was adopted elsewhere.
+- Ran controlled configuration sweeps against a 90-day baseline rather than tuning by feel, and published the before/after pipelines including the configurations that regressed.
+- Built the unified CLI and local development platform — one command, three modes, profiling, a metrics pipeline — so the team runs the stack locally instead of queueing for shared environments.
+
+#### Earlier platform work
+- Implemented near-real-time PII redaction for data governance, on S3 and AWS Comprehend.
+- Integrated a microservices architecture on AWS Fargate and a Temporal-based task execution system for hierarchical DAG processing.
+- Shipped session logs, YAML pipeline templates, a Cron-based scheduler and Terraform support, and launched the SurveyMonkey connector.
+- Unified how HTTP and gRPC failures are reported across the control plane, cutting support overhead.
+
+---
+
+### Software Development Intern @ Hevo Data (Sep 2021 — Oct 2021)
+- Added support for 'wal2json' output plugin for postgres replication.
+- Reduced WAL processing time taken by the platform by **60%**.
+- Implemented dynamic plugin selection using Guice dependency injection.
+- Implemented OAuth 2.0 feature for accessing protected REST APIs.
+- Tech Stack: Java, Postgres, Guice
+
+---
+
+### Software Development Intern @ MTX Global (Jun 2021 — Aug 2021)
+- Worked on curating ETL data pipeline from concept to proof of concept.
+- Implemented on-demand data transformations using Apache Spark, and streaming the same using Apache Kafka onto Google Cloud Platform.
+- Containerized individual components of the pipeline for better development and deployment.
+- Solely configured and maintained pipeline on Google Kubernetes Engine (GKE).
+- Orchestrated data visualization service to configure overlaid charts.
+- Tech Stack: Python, Apache Spark, Docker, Kubernetes, Google Cloud Platform
+
+---
+
+### Software Development Intern @ Triomics (Apr 2021 — May 2021)
+- Collaborated with the core founding team on the initial stages of the clinical trial platform.
+- Setup infrastructure for the applications, keeping scalability and security into account.
+- Developed management dashboard service for micro and macro level user access across the apps.
+- Customized D3 for visualization of data, fitting clinical use cases.
+- Tech Stack: React, Django, Postgres, D3
+
+---
+
+### Software Development Intern @ Rephrase.ai (Oct 2020 — Mar 2021)
+- Ensured stability of the generative AI synthetic video platform by integrating tests and error handling.
+- Optimized uploading and validating data from user's end.
+- Implemented Stripe, Sentry, ClickUp for enhanced development and billing cycles.
+- Integrated continuous integration and ensured continuous delivery among various services.
+- Worked on Graphene to optimize GraphQL API performance.
+- Tech Stack: React, Django, GraphQL, ffmpeg, Stripe
+
+---
+
+### Software Engineering Intern @ Powerplay (Apr 2020 — Jun 2020)
+- Implemented core features and structure from concept through deployment.
+- Introduced REST APIs, server-side pagination and JWT based authentication system.
+- Standardized UI libraries by enclosing them in highly customizable wrappers for code reusability.
+- Assessed UX and UI designs for technical feasibility.
+- Developed standard and ad hoc reports in table format.
+- Tech Stack: React, Node.js, MongoDB, JWT
+
+---
+
+### Developer @ SDSLabs (Jan 2019 — Jul 2020)
+- Promoted technical culture on the campus by conducting hackathons, lecture series, and competitions.
+- Responsible for maintaining campus applications and server infrastructure.
+- Mentored freshmen students in their projects for the Winter of Code program.
+
+---
+
+### Manager @ Entrepreneurship Cell, IIT Roorkee (Feb 2019 — Feb 2020)
+- Conducted hands-on workshops and events on entrepreneurship, SaaS, and product design.
+- Spearheaded user interface development and onboarding flows.
+
+---
+
+### Web Developer @ Cognizance, IIT Roorkee (Dec 2018 — Jan 2020)
+- Part of team establishing web presence for Cognizance (tech fest).
+- Designed architecture and implemented core features of progressive web app.
+- Ported legacy code from Webpack v2 to Webpack v4 and restructured dependencies.
+
+---
+
+## Projects
+
+### [Binsight](https://binsight.adrijshikhar.dev) — Open Source
+- **Repository:** https://github.com/adrijshikhar/binsight
+- **Stack:** Go, SQLite, React, Astro, Tailwind CSS, MySQL, MariaDB, Docker, Homebrew
+- A local, read-only MySQL and MariaDB binlog viewer, decoder, and transaction analyser.
+- Indexes decoded binlogs in SQLite and presents a filterable, virtualized event stream with transaction grouping and row-image inspection.
+- Compares `go-mysql` decoding with native `mysqlbinlog` output, and reports six documented transaction and position anomalies (including 4 GiB position wrap).
+- Supports local file watching and optional replication streaming; releases via Homebrew, Docker, shell installer, and `go install`.
+
+---
+
+### [aim](https://github.com/adrijshikhar/aim) — Open Source
+- **Repository:** https://github.com/adrijshikhar/aim
+- **Stack:** Go, Bubble Tea, TUI, CLI, OAuth PKCE
+- A CLI and interactive TUI for running AI coding assistants in isolated profiles.
+- Gives each profile a separate virtual home, configuration, token state, and history.
+- Supports Antigravity CLI, Gemini CLI, Claude Code, and OpenAI Codex, with agent-aware profile selection and quota telemetry.
+- Includes browser OAuth PKCE login, session browsing and resumption, diagnostics, and Bubble Tea controls.
+
+---
+
+### [cxstatusline](https://cxstatusline.adrijshikhar.dev) — Open Source
+- **Repository:** https://github.com/adrijshikhar/cxstatusline
+- **Stack:** TypeScript, Bun, Ink, Rust
+- A configurable 1-to-3-row statusline for OpenAI Codex CLI.
+- Shows documented session telemetry including model, context, Git state, token usage, and reset timers.
+- Provides an interactive terminal configuration UI and browser playground for layouts, widgets, and ANSI themes.
+- Adds telemetry through a versioned Rust patch and renders locally with Node/TypeScript.
+
+---
+
+### [Catalyst](https://github.com/adrijshikhar/catalyst) — Open Source
+- **Repository:** https://github.com/adrijshikhar/catalyst
+- **Stack:** Agent Skills, Python, Shell, JSON Schema
+- A cross-agent coding-session handoff harness.
+- Stores typed, schema-validated handoff briefs in the repository so work can resume seamlessly across sessions and agents.
+- Verified handoff and hook behavior for Claude Code, Codex CLI, and Antigravity CLI.
+- Uses a shared brief format for checkpointing, scoped subagent work, and drift checks.
+
+---
+
+### resume-ops — Personal
+- **Stack:** Claude Code, Agent Skills, GitHub API, Jira API, Confluence API, Slack API
+- A Claude Code skill that reads four years of engineering history and writes it back as verified evidence.
+- Pulls from GitHub, Jira, Confluence, and Slack, reconciles sources against each other, and synthesises the result.
+- Every claim traces to a link, recording counting traps alongside numbers.
+
+---
+
+### [Retry Thread Pool](https://central.sonatype.com/artifact/io.github.adrijshikhar/retry-thread-pool) — Maven Central
+- **Artifact:** `io.github.adrijshikhar:retry-thread-pool`
+- **Repository:** https://github.com/adrijshikhar/retry-thread-pool
+- **Stack:** Java 17+, Concurrency, Maven Central
+- A retrying task executor for Java 17+. Wrap any `ExecutorService` and get retries without rewriting the task.
+- Configurable backoff, retry predicates, per-attempt timeouts, listeners, and telemetry. Zero runtime dependencies.
+
+---
+
+### [adrijshikhar.dev](https://adrijshikhar.dev) — Personal
+- **Repository:** https://github.com/adrijshikhar/adrijshikhar.github.io
+- **Stack:** Astro 6, React 19, HTML5 Canvas, Tailwind CSS
+- Personal site built as an astronomical observatory instrument rather than a page.
+- Star positions, planets, the Moon's terminator, and the Sun computed in real-time from observer coordinates and current Julian date.
+- 16 physical astronomy invariants verified in CI; 169/255 canvas-alpha contrast ceiling verified via CDP.
+
+---
+
+### [ScraperQL](https://github.com/adrijshikhar/scraper-ql) — Dgraph Labs
+- **Stack:** GraphQL, Slash GraphQL, Node.js
+- Developed for Hack and Slash GraphQL hackathon. GraphQL web scraper with a `scrape` query resolver returning generic HTML-node entities.
+
+---
+
+### Slackbot — SDSLabs
+- **Stack:** Go, Slack API, WebSockets
+- Go bot using sockets to communicate with Slack API. Core features with plugin layer for attaching multiple bots to one entry point.
+
+---
+
+### [Issue Labeler Bot](https://github.com/sdslabs/SDSLabs-Issue-Labeler) — SDSLabs
+- **Stack:** Python, BERT, GitHub API
+- GitHub bot automating issue labelling using machine learning. Scraped 20,000 GitHub issues to fine-tune Google BERT.
+
+---
+
+### Accounts — SDSLabs
+- **Stack:** OAuth 2.0, Docker, Redis
+- Multi-provider OAuth 2.0 authentication framework with separated authentication and resource servers.
+
+---
+
+### [Create React App Webpack](https://github.com/adrijshikhar/create-react-app-webpack) — SDSLabs
+- **Stack:** React, Webpack
+- Minimal single-command starter setup for React and Webpack.
+
+---
+
+### [Vega VS Code Extension](https://github.com/adrijshikhar/vega-vscode-extension) — Major League Hacking
+- **Stack:** TypeScript, VS Code API, Vega
+- Integrated Vega with VS Code to generate interactive charts and diagrams from JSON schema configuration inside WebViews.
+
+---
+
+### [DarkDev](https://github.com/adrijshikhar/darkdev) — SDSLabs
+- Hand-crafted VS Code dark theme for focused night development.
+
+---
+
+### Covid 19 Tracker — SDSLabs
+- **Stack:** Flutter, Dart, Maps SDK
+- Cross-platform Flutter app tracking pandemic statistics across India.
+
+---
+
+### [Kill-Zee](https://github.com/adrijshikhar/kill-zee) — Global Game Jam 2020
+- **Stack:** Lua, LÖVE2D
+- Tactical zombie tower defense game created during Global Game Jam 2020.
+
+---
+
+### Coderunner 2.0 — SDSLabs
+- **Stack:** Go, gRPC, Docker
+- Isolated code execution service in Go. Central governor dispatching execution runs into ephemeral Docker containers over gRPC.
+
+---
+
+### Cerebro — SDSLabs
+- **Stack:** Laravel, React, Redux, MySQL
+- Platform hosting data science competitions and hackathons at IIT Roorkee.
+
+---
+
+## Writing
+
+- **[Building a Local-First MySQL Binlog Analyzer in Pure Go](https://adrijshikhar.dev/blogs/building-a-pure-go-binlog-analyzer/)**  
+  How Binsight decodes binlog events, indexes them in SQLite, detects position wrap traps, and provides sub-second transaction inspection.
+- **[A MySQL binlog file can exceed 4 GiB — and then every position in it lies](https://adrijshikhar.dev/blogs/mysql-binlog-4gib-position-wrap/)**  
+  Deep dive into MySQL's 32-bit binlog offset overflow, how the server silently continues writing past 4 GiB, and how CDC engines misread GTIDs.
+- **[retry-thread-pool: a retrying executor for Java](https://adrijshikhar.dev/blogs/retry-thread-pool/)**  
+  Architecting an unopinionated, zero-dependency retry wrapper for Java's `ExecutorService` with exponential backoff and attempt budgets.
+
+---
+
+## Skills
+
+### Data & Streaming
+Debezium, Kafka, Temporal, CDC, schema evolution, SCD Type 2, Postgres, MySQL, Oracle, SQL Server, Snowflake, BigQuery, Redshift, Apache Spark
+
+### Languages & Systems
+Java 17, Go, Python, TypeScript, React, Node.js, Rust (tooling/patches), SQL, C/C++, gRPC, Spring Boot, Dropwizard, Django, GraphQL
+
+### Infrastructure & Cloud
+AWS (Fargate, S3, Comprehend), Google Cloud Platform (GKE), Docker, Kubernetes, Terraform, CircleCI, GitHub Actions, MongoDB, Redis, SQLite
+
+### Observability & Testing
+OpenTelemetry, Grafana, Testcontainers, JUnit 5, RE2J, k6, End-to-End Release Gates
+
+### Agentic Development & Harnesses
+Agent Skills, Harness Design, Model Context Protocol (MCP), LLM APIs, CLI/TUI Ergonomics, Claude Code, Antigravity CLI, OpenAI Codex
+
+### Earlier Tech
+Redux, Astro, Tailwind, Canvas, Flutter, Dart, Laravel, PHP, Sass, Webpack
+
+### Environment
+- **OS:** macOS, previously Manjaro i3wm
+- **IDE:** Customized IntelliJ IDEA / VS Code
+- **Shell:** fish, Oh My Fish
+
+---
+
+## Education
+
+### Indian Institute of Technology, Roorkee
+- **Degree:** Bachelor of Technology (B.Tech)
+- **Field:** Chemical Engineering (Pivoted to software systems in freshman year)
+- **Period:** Jul 2018 — Jun 2022
+
+### Gulab Rai Montessori
+- **Degree:** High School / Intermediate (PCM with Computer Science)
+- **Period:** Apr 2015 — Mar 2017
+
+---
+
+## Achievements
+
+- **1st Place (National)** — CSAW Embedded Security Challenge 2020
+- **3rd Place (Global)** — CSAW Embedded Security Challenge 2020
+
+---
+
+## Interests
+
+- Music enthusiast & guitarist with a meticulous approach to audio organization.
+- Sci-fi literature, cinema, and exploring cognitive neuroscience & brain mechanics.
+
+---
+
+## Links & Contacts
+
+- **Portfolio:** https://adrijshikhar.dev
+- **GitHub:** https://github.com/adrijshikhar
+- **LinkedIn:** https://www.linkedin.com/in/adrij-shikhar
+- **dev.to:** https://dev.to/adrijshikhar
+- **Email:** adrijshikhar26@gmail.com
+- **Agent Guide:** https://github.com/adrijshikhar/adrijshikhar/blob/main/AGENTS.md
